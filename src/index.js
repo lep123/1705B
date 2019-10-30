@@ -1,12 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import { SSL_OP_MSIE_SSLV2_RSA_PADDING } from 'constants';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// const element = <h1>小花</h1>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function tick () {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>{new Date().getTime()}</h2>
+    </div>
+  )
+
+  ReactDOM.render(
+    element,
+    document.querySelector('#root')
+  )
+}
+
+
+
+// ReactDOM.render(
+//   element,
+//   document.getElementById('root')
+// )
