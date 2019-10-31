@@ -1,27 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { SSL_OP_MSIE_SSLV2_RSA_PADDING } from 'constants';
 
-// const element = <h1>小花</h1>
-
-function tick () {
-  const element = (
+function Clock(props) {
+  return (
     <div>
       <h1>Hello, world!</h1>
-      <h2>{new Date().getTime()}</h2>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
     </div>
-  )
-
-  ReactDOM.render(
-    element,
-    document.querySelector('#root')
   )
 }
 
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  )
+}
 
-
-// ReactDOM.render(
-//   element,
-//   document.getElementById('root')
-// )
+setInterval(tick, 1000)
