@@ -2,25 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-// const element = <h1>小花</h1>
+// 要求 num > 1 展示 1705B
+// num <= 1 展示 1706B
+const num = 1
+let element = ''
 
-function tick () {
-  const element = (
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>{new Date().getTime()}</h2>
-    </div>
-  )
+if (num > 1) {
+  element = <h1>1705B</h1>
 
-  ReactDOM.render(
-    element,
-    document.querySelector('#root')
-  )
+} else {
+  element = <h1>1706B</h1>
 }
 
-setInterval(tick, 2000)
+element = <div>{element}</div>
 
-// ReactDOM.render(
-//   element,
-//   document.getElementById('root')
-// )
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)
