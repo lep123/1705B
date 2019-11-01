@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+*{
+  background: red;
+  /* 李晓超 */
+}
+
 .avatar {
   width: 100px;
 }
