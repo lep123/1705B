@@ -15,8 +15,9 @@ code {
 .avatar {
   width: 100px;
 }
-body{
+
+.body {
 	width: 100%;
 	background: aqua;
-	height: 100%;
+	
 }
