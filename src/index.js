@@ -8,7 +8,7 @@ import './index.css'
 //   'Hello world',
 // )
 
-const num = 5
+const num = 0 
 let element = ''
 
 if(num > 1) {
