@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
+const html = React.createElement(
+	'p',
+	{className: 'active'},
+	'555'
+)
 
-function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  )
-}
-
-setInterval(tick, 1000)
+ReactDOM.render( 
+	html,
+	document.getElementById('root')
+)

@@ -12,8 +12,13 @@ code {
     monospace;
 }
 
-.avatar {
-  width: 100px;
-  background: linear-gradient(blue,red);
+.active {
+  background: -webkit-linear-gradient(left,green,black);
   color: #fff;
+  text-align: center;
+}
+
+*{
+	margin: 0;
+	padding: 0;
 }
