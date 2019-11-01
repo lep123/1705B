@@ -15,4 +15,5 @@ code {
 .avatar {
   width: 100px;
   background: linear-gradient(blue,red);
+  color: #fff;
 }
