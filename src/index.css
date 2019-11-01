@@ -15,3 +15,7 @@ code {
 .avatar {
   width: 100px;
 }
+
+body {
+  border: 1px solid #ccc;
+}
