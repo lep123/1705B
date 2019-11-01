@@ -15,3 +15,8 @@ code {
 .avatar {
   width: 100px;
 }
+body{
+	width: 100%;
+	background: aqua;
+	height: 100%;
+}
