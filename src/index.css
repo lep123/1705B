@@ -25,3 +25,50 @@ html {
 body {
   border: 1px solid #ccc;
 }
+
+.title{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-around;
+  -ms-align-items: center;
+  align-items: center;
+}
+.goods{
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.goods h3{
+  width: 30%;
+  height: 300px;
+  background: #fff;
+}
+.goods h3 img{
+  width: 100%;
+  height: 200px;
+}
+.goods h3 span{
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods h3 p b{
+  color: #ccc;
+}
+.goods h3 p i{
+  color: red;
+}
