@@ -13,3 +13,4 @@ ReactDOM.render(
   <Avatar user={{name: 'xsa'}} />,
   document.getElementById('root')
 )
+

@@ -16,16 +16,23 @@ function Avatar (props) {
   )
 }
 
+function UserInfo (props) {
+  return (
+    <div className="userinfo">
+      <Avatar user={props.author} />
+      <div className="userinfo-name">
+        {props.author.name}
+      </div>
+    </div>
+  )
+}
+
 function Comment (props) {
+  // props 是个对象
+  console.log(props)
   return (
     <div className="comment">
-      <div className="userInfo">
-        <Avatar user={props.autho} />
-
-        <div className="userinfo-name">
-          {props.author.name}
-        </div>
-      </div>
+      <UserInfo author={props.author} />
       
       <div className="comment-text">
         {props.text}
@@ -38,8 +45,10 @@ function Comment (props) {
   )
 }
 
+// 为什么要提取组件?
+
 ReactDOM.render(
-  <Comment 
+  <Comment
     author={{
       avatarUrl: 'https://www.baidu.com/img/bd_logo1.png',
       name: 'xsa',
