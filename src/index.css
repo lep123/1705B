@@ -15,3 +15,45 @@ code {
 .avatar {
   width: 100px;
 }
+.box{
+	margin: 0 auto;
+	
+}
+.headers{
+	display: inline-block;
+	margin: 0 20px;
+}
+.headersTrue {
+	display: inline-block;
+	margin: 0 20px;
+	color: red;
+}
+.bodys{
+	display: flex;
+	flex-wrap: wrap;
+}
+.listType{
+	width: 33%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.listType{
+	color: #9c9c9c;
+	
+}
+.listType dd{
+	
+	margin-left: 0;
+}
+.listType dd p{
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.listType span {
+	color: red;
+}
+
