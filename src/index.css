@@ -16,6 +16,51 @@ code {
   width: 100px;
 }
 
-body{
+/* body{
 	background: red;
+} */
+*{margin: 0;padding: 0;}
+ul li{
+	list-style: none;
 }
+.box{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+	.nav{
+		width: 500px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 20px;
+	}
+		.nav>li{
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.bodys{
+			margin-top: 20px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+			.bodys>dl{
+				width: 30%;
+				padding: 0 10px;
+				box-sizing: border-box;
+				margin-bottom: 10px;
+			}
+			.bodys>dl>dt{width: 100%;margin-bottom: 10px;}
+				.bodys>dl>dt>img{
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			.bodys>dl>dd>p:nth-child(2){color: gray;font-size: 13px;}
+			.bodys>dl>dd>p:nth-child(2)>span{color: red;font-size: 16px;}
+			
+		
