@@ -10,11 +10,19 @@ class Element extends Component {
       <div>
         {
           this.props.list.length > 0 && 
-            this.props.list.map((name, key) => <p key={key}>{name}</p>)
+            this.props.list.map((name, key) => {
+              if (0) {
+                return (
+                  <p key={key}>
+                    {name}
+                  </p>
+                )
+              }
+            })
         }
 
         {
-          this.props.list > 0 ? 
+          this.props.list.length > 0 ? 
             <h1>{this.props.list.length}</h1> :
             <p>0</p>
         }
