@@ -1,12 +1,25 @@
-import React from 'react'; 
+import React , {Component} from 'react';
+import Left from './left'
+import Right from './right/index'
 import './style.less'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
+
+    constructor (props) {
+        super(props)
+        //路由守卫
+        if(!localStorage.getItem('username')) {
+            //没有登陆跳到登录页面
+            props.history.push('/login')
+        }
+
+    }
 
     render() {
         return(
-            <div className="home-wrap-box">
-
+            <div className="pages-home">
+                <Left />
+                <Right />
             </div>
         )
     }

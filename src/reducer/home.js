@@ -1,13 +1,14 @@
-import { HOMEDATA} from '../constants/actionTypes'
+import { DODATA } from '@/constants'
 
-const initState = {
-    token: '',
+const obj = {
+    'data': [],
 }
 
-export default function (state = initState, action) {
+export default function (state = obj, action) {
     switch (action.type) {
-        case HOMEDATA:
-            return { ...state, token: action.payload }
+        case DODATA:
+            return {...state, data: action.payload.data.users}
+    
         default:
             return state
     }

@@ -1,5 +1,8 @@
 import axios from 'axios'
+import { message } from 'antd'
+import qs from 'qs'
 
+ 
 let cancelToken = axios.CancelToken
 
 const cancel = []
@@ -18,48 +21,73 @@ axios.interceptors.request.use(config => {
     removePending(config)
     config.cancelToken = new cancelToken(c => {
         cancel.push({ 
-            f: c,
-            u: config.url,
+        f: c,
+        u: config.url,
         })
     })
-        return config
+    return config
     }, error => {
-        return Promise.reject(error)
-})
+    return Promise.reject(error)
+    })
 
-//添加响应拦截器
-axios.interceptors.response.use(response => {
-    return response
-}, error => {})
+    //添加响应拦截器
+    axios.interceptors.response.use(response => {
+       // console.log(response,'11')
+        switch (response.data.code) {
+            case 203:
+                window.location.href="http://localhost:3000/login"
+                break;
+           
+            default:
+                break;
+        }
 
-export function post (url, payload = {}) {
+        return response
+    }, error => {
+        switch (error.response && error.response.status ) {
+            case 504:
+                message.warning('请求失败')
+                break;
+        
+            default:
+                break;
+        }
+
+    })
+
+
+export const post = (url, payload) => {
+
+    let result = ""
+
     return new Promise((resolve, reject) => {
-    axios({
-        method: 'post',
-        url,
-        data: payload
+        axios({
+            method: 'post',
+            url,
+            data: payload
+            })
+            .then(res => {
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err)
+            })
     })
-        .then(response => {
-            resolve(response)
-        })
-        .catch(err => {
-        reject(err)
-        })
-    })
+
 }
 
-export function get (url, payload = {}) {
+export const get = (url, payload) => {
+   
     return new Promise((resolve, reject) => {
-    axios({
+      axios({
         method: 'get',
         url,
         params: payload
-    })
-        .then(response => {
-            resolve(response)
+      })
+        .then(res => {
+          resolve(res)
         })
-        .catch(err => {
-        reject(err)
-        })
+        .catch(err => reject(err))
     })
-}
+  }
+  

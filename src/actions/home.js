@@ -1,8 +1,12 @@
-import { HOMEDATA } from '../constants/actionTypes'
+import { get } from '@/utils/request'
+import { DODATA } from '@/constants'
+import api from '@/services/api'
 
-export const home = () => {
+export const dodata = () => {
     return {
-        type: HOMEDATA,
-        payload: '',
+        type: DODATA,
+        payload: get(api.data)
     }
 }
+
+

@@ -1,6 +1,101 @@
-.home-wrap-box {
+.pages-home{
     width: 100%;
     height: 100%;
+    display: flex;
     position: fixed;
-    background: red;
+
+    .home-left{
+        width: 200px;
+        height: 100%;
+    }
+
+
+    .home-right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .right-top{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+
+        .right-section{
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+
+            .index1{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                .top{
+                    width: 100%;
+                    height: 80px;
+                }
+
+                .sec{
+                    flex: 1;
+                    overflow:auto;
+                }
+            }
+    
+            .index2{
+                width: 100%;
+                height: 100%;
+                background: yellow;
+            }
+    
+            .index3{
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+            }
+    
+            .index4{
+                width: 100%;
+                height: 100%;
+                background: peru;
+            }
+    
+            .index5{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .cons{
+                    flex:1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    .boxs{
+                        width: 30%;
+                        border: 1px solid #cdcdcd;
+                        margin: 10px 0;
+                    }
+                }
+
+                .bootom{
+                    width: 100%;
+                    height: 40px;
+                }
+                
+            }
+    
+            .index6{
+                width: 100%;
+                height: 100%;
+                background: yellow;
+            }
+        }
+        
+    }
 }

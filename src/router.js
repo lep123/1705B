@@ -1,15 +1,17 @@
 import React from 'react';
+import loader from '@/utils/loader'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from './pages/home'
 
-export default class extends React.Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route path="/" component={Home} />
-                </Switch>
-            </BrowserRouter>
-        )
-    }
+const Home = loader(() => import('@/pages/home/index')) //首页
+const Login = loader(() => import('@/pages/login')) //登录
+
+export default function Router () {
+    return(
+        <BrowserRouter>
+            <Switch>
+                <Route path='/login' component={Login} />
+                <Route path='/' component={Home} />
+            </Switch>
+        </BrowserRouter>
+    )
 }
