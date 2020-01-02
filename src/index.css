@@ -21,6 +21,10 @@ code {
   background: #364d79;
   overflow: hidden;
 }
+<<<<<<< HEAD
+/* 窝窝头,一块钱四个,嘿嘿 */
+/* 谁他妈买小米 */
+=======
 
 .ant-carousel .slick-slide h3 {
   color: #fff;
@@ -48,3 +52,4 @@ code {
 a.active {
   color: #F00;
 }
+>>>>>>> b4207d15fa8b7c15e97957044a8affd479c400c5

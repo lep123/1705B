@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// s
+// 最强王脑 铂金手
 function App() {
   return (
     <div className="App">
