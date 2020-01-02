@@ -22,34 +22,8 @@ code {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
-
-.box {
-  border: 2px #f00 solid;
-  display: flex;
-}
-.car {
-  flex-grow: 1;
-  width: 1px;
-}
-.div {
-  height: 30px;
-  line-height: 30px;
-  overflow: hidden;
-}
-.none {
-  display: none;
-}
-.block {
-  display: block;
-}
-a.active {
-  color: #F00;
-=======
 .on{
 	width: 100%;
->>>>>>> 94df054bd826831dd48670afa3c4611e3b2c66c5
 }
+
+/*何明玥牛逼*/
