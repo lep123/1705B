@@ -2,20 +2,30 @@ import React from 'react';
 import './styles.less';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-export default @Form.create({ name: 'normal_login' })
+export default
+@Form.create({ name: 'normal_login' })
 class extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+
 			}
 		});
 	};
 
-	registered(){
+	registered = () => {
 		this.props.history.push('/registered')
+	}
+
+	validator = (rule, value, callback) => {
+		const val = /([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*/img
+		if (value && !value.match(val)) {
+			callback('字母数字结合')
+		} else {
+			callback()
+		}
 	}
 
 
@@ -27,7 +37,12 @@ class extends React.Component {
 					<Form onSubmit={this.handleSubmit} className="login-form">
 						<Form.Item>
 							{getFieldDecorator('username', {
-								rules: [{ required: true, message: '请输入用户名' }],
+								rules: [
+									{
+										required: true,
+										message: '请输入用户名'
+									}
+								],
 							})(
 								<Input
 									prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -37,7 +52,15 @@ class extends React.Component {
 						</Form.Item>
 						<Form.Item>
 							{getFieldDecorator('password', {
-								rules: [{ required: true, message: '请输入密码' }],
+								rules: [
+									{
+										validator: this.validator
+									},
+									{
+										required: true,
+										message: '请输入密码'
+									}
+								],
 							})(
 								<Input
 									prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
