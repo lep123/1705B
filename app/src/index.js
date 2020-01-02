@@ -7,4 +7,5 @@ import 'antd/dist/antd.css';
 
 ReactDOM.render(
 	<Route />,
-	document.getElementById('root'));
+	document.getElementById('root')
+);
