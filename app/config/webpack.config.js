@@ -43,7 +43,7 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
+const cssRegex = /\.(css|less)$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
@@ -89,6 +89,13 @@ module.exports = function(webpackEnv) {
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
+      },
+      {
+        loader: require.resolve('less-loader'), // compiles Less to CSS
+        options: {
+          modifyVars: {},
+          javascriptEnabled: true,
+        },
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -301,6 +308,8 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': path.resolve(__dirname, '../src'),
+        '@@': path.resolve(__dirname, '../src/components')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
