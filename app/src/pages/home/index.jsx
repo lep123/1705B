@@ -1,9 +1,16 @@
 import React from 'react';
 import './index.less';
 import { Layout, Menu, Icon } from 'antd';
+import {
+	Switch,
+	Route,
+	Link
+} from "react-router-dom";
+import Echats from '@/pages/echats'
+import Add from '@/pages/add'
+import List from '@/pages/list'
 
 const { Header, Sider, Content } = Layout;
-
 
 export default class extends React.Component {
 	state = {
@@ -24,16 +31,28 @@ export default class extends React.Component {
 						<div className="logo" />
 						<Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
 							<Menu.Item key="1">
-								<Icon type="user" />
-								<span>nav 1</span>
+								<Link to="/">
+									<Icon type="user" />
+									<span>
+										列表
+								</span>
+								</Link>
 							</Menu.Item>
 							<Menu.Item key="2">
-								<Icon type="video-camera" />
-								<span>nav 2</span>
+								<Link to="/echats">
+									<Icon type="video-camera" />
+									<span>
+										echats
+									</span>
+								</Link>
 							</Menu.Item>
 							<Menu.Item key="3">
-								<Icon type="upload" />
-								<span>nav 3</span>
+								<Link to="/add">
+									<Icon type="upload" />
+									<span>
+										添加
+									</span>
+								</Link>
 							</Menu.Item>
 						</Menu>
 					</Sider>
@@ -53,8 +72,13 @@ export default class extends React.Component {
 								minHeight: 280,
 							}}
 						>
-							00000
-          </Content>
+							{/* 二级路由 */}
+							<Switch>
+								<Route path="/echats" component={Echats} />
+								<Route path="/add" component={Add} />
+								<Route path="/" component={List} />
+							</Switch>
+						</Content>
 					</Layout>
 				</Layout>
 			</div>
