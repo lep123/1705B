@@ -22,8 +22,42 @@ code {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 .on{
 	width: 100%;
 }
 
 /*何明玥牛逼*/
+=======
+<<<<<<< HEAD
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.box {
+  border: 2px #f00 solid;
+  display: flex;
+}
+.car {
+  flex-grow: 1;
+  width: 1px;
+}
+.div {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+a.active {
+  color: #F00;
+=======
+.on{
+	width: 100%;
+>>>>>>> fdb33c8f07e85508db0da4c226341a1b69d161ba
+}
+>>>>>>> 2d9b0c013d6a872078a8e73eaa628c8c02fe4bd3
