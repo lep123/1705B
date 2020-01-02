@@ -13,6 +13,7 @@ export default function Router() {
 			<PersistGate loading={null} persistor={persistStore(store)}>
 				<BrowserRouter>
 					<Switch>
+						<Route path="/registered" component={Registered}/>
 						<Route path="/login" component={Login} />
 						<Route path="/" component={Home} />
 					</Switch>
