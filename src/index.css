@@ -33,4 +33,21 @@ h2{ margin:0; padding: 0;}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+<<<<<<< HEAD
 } */
+=======
+}
+
+/* For demo */
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+
+
+
+>>>>>>> 5f8c15c148c65bf811f4d10de9e3b5237f5411f6

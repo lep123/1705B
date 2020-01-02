@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/home'
 
-import 'antd/dist/antd.css'
-import './index.css';
-
+/* 何明玥NC */
 
 ReactDOM.render(
-   <Home />,
-   document.getElementById('root')
-);
+ <p>11</p>,
+  document.getElementById('root')
+)
