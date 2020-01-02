@@ -1,5 +1,27 @@
+* { touch-action: pan-y; }
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0 }
+address, cite, dfn, em, var {font-style:normal;}
+code, kbd, pre, samp {font-family:courier new, courier, monospace;}
+ul, ol {list-style:none;}
+fieldset, img {border:0}
+table {border-collapse:collapse;border-spacing:0;}
+div:after, ul:after, dl:after,.clearfix:after { content:""; clear:both; height:0; }
+/****/
+abbr, article, aside, audio, canvas, datalist, details, figure, footer, header, hgroup, menu, nav, output, progress, section, video {margin:0;padding:0}
+i,u,b,em,span,small{ font-weight:normal; font-style:normal;}
+html,body {height: 100%;width: 100%;}
+/****/
 body {
-  border: 2px #f00 solid;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+a{text-decoration: none;color:#666;}
+a:hover{color:#f00;}
+h2{ margin:0; padding: 0;}
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -11,40 +33,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-/* For demo */
-.ant-carousel .slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
-  overflow: hidden;
-}
-
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
-
-.box {
-  border: 2px #f00 solid;
-  display: flex;
-}
-.car {
-  flex-grow: 1;
-  width: 1px;
-}
-.div {
-  height: 30px;
-  line-height: 30px;
-  overflow: hidden;
-}
-.none {
-  display: none;
-}
-.block {
-  display: block;
-}
-a.active {
-  color: #F00;
-}
+} */
