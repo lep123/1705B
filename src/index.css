@@ -1,4 +1,5 @@
 body {
+  border: 2px #f00 solid;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,6 +13,42 @@ code {
     monospace;
 }
 
+<<<<<<< HEAD
+/* For demo */
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.box {
+  border: 2px #f00 solid;
+  display: flex;
+}
+.car {
+  flex-grow: 1;
+  width: 1px;
+}
+.div {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+a.active {
+  color: #F00;
+=======
 .color {
   color: red;
 }
@@ -54,4 +91,5 @@ code {
 *{
 	margin: 0;
 	padding: 0;
+>>>>>>> e1cf91e55c466aaf9947c3503b9c8ea949eccaa7
 }
