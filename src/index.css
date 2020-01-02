@@ -22,6 +22,7 @@ code {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
@@ -47,4 +48,8 @@ code {
 }
 a.active {
   color: #F00;
+=======
+.on{
+	width: 100%;
+>>>>>>> 94df054bd826831dd48670afa3c4611e3b2c66c5
 }
