@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+// 最强王脑 铂金手
 function App() {
   return (
     <div className="App">
+      {/* 李晓超 1705B  */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
