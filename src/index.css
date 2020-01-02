@@ -1,4 +1,5 @@
 body {
+  border: 2px #f00 solid;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,9 +13,15 @@ code {
     monospace;
 }
 
-.avatar {
-  width: 100px;
+/* For demo */
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
 }
+<<<<<<< HEAD
 body {
   border:1px solid pink;
 }
@@ -23,4 +30,32 @@ li{
 }
 span{
   padding:0 10px
+=======
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.box {
+  border: 2px #f00 solid;
+  display: flex;
+}
+.car {
+  flex-grow: 1;
+  width: 1px;
+}
+.div {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+a.active {
+  color: #F00;
+>>>>>>> 8ae14f83e1729d01a8a47858b10fa91db5e48765
 }
