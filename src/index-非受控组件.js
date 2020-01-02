@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom'
   2. 费受控表单
  */
 
+//  啊实打实的撒
 class Input extends React.PureComponent {
   constructor (props) {
     super(props)
