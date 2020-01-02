@@ -6,6 +6,11 @@ import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import {store} from "./store"
+import loadable  from '@/utils/loader' 
+
+const Home = loadable(() => import('./pages/home'))
+const Login = loadable(() => import('./pages/login'))
+
 export default function Router() {
 	return (
 		<Provider store={store}>
