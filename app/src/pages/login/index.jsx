@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.less';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { post } from '@/utils/request'
+import services from '@/services/api'
 
 export default
 @Form.create({ name: 'normal_login' })
@@ -10,7 +12,9 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-
+				post(services.log , values).then(res => {
+					console.log(res)
+				})
 			}
 		});
 	};
@@ -46,7 +50,7 @@ class extends React.Component {
 							})(
 								<Input
 									prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-									placeholder="Username"
+									placeholder="用户名"
 								/>,
 							)}
 						</Form.Item>
@@ -65,15 +69,11 @@ class extends React.Component {
 								<Input
 									prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
 									type="password"
-									placeholder="Password"
+									placeholder="密码"
 								/>,
 							)}
 						</Form.Item>
 						<Form.Item>
-							{getFieldDecorator('remember', {
-								valuePropName: 'checked',
-								initialValue: true,
-							})(<Checkbox>记住密码</Checkbox>)}
 							<Button type="primary" htmlType="submit" className="login-form-button">
 								登录
 							</Button>
