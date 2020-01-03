@@ -7,7 +7,13 @@ export default class extends React.Component {
 		console.log(data)
 		return (
 			<div className="cart">
-				<img src={data.msg} alt="" />
+				<img src={data.msg ? data.msg : "none.gif"} alt="" />
+				<img src="head.gif" alt="" className="userHead" />
+				<div className="gender">
+					<p>{data.name}</p>
+					<p>{data.hospital}</p>
+					<p>{data.address}</p>
+				</div>
 			</div>
 		)
 	}
