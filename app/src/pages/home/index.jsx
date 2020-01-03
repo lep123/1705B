@@ -6,10 +6,12 @@ import {
 	Route,
 	Link
 } from "react-router-dom";
-import Echats from '@/pages/echats'
-import Add from '@/pages/add'
-import List from '@/pages/list'
-import Posi from '@/pages/position'
+import loadable from '@/utils/loader'
+const Echats = loadable(() => import('@/pages/echats'))
+const Add = loadable(() => import('@/pages/add'))
+const List = loadable(() => import('@/pages/list'))
+const Posi = loadable(() => import('@/pages/position'))
+const AddList = loadable(() => import('@/pages/addList'))
 
 const { Header, Sider, Content } = Layout;
 
@@ -37,6 +39,9 @@ export default class extends React.Component {
 				break;
 			case '/add':
 				dis = ['3']
+				break;
+			case '/addList':
+				dis = ['4']
 				break;
 			default:
 				dis = ['1']
@@ -73,6 +78,14 @@ export default class extends React.Component {
 									</span>
 								</Link>
 							</Menu.Item>
+							<Menu.Item key="4">
+								<Link to="/addList">
+									<Icon type="align-center" />
+									<span>
+										添加列表
+									</span>
+								</Link>
+							</Menu.Item>
 						</Menu>
 					</Sider>
 					<Layout>
@@ -95,6 +108,7 @@ export default class extends React.Component {
 							<Switch>
 								<Route path="/echats" component={Echats} />
 								<Route path="/add" component={Add} />
+								<Route path="/addList" component={AddList} />
 								<Route path="/" component={List} />
 							</Switch>
 						</Content>

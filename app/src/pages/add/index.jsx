@@ -2,7 +2,7 @@ import React from 'react';
 import './index.less'
 import {
 	Form,
-	Icon, Input, Button, Checkbox,
+	Icon, Input, Button,
 	Upload, message
 } from 'antd';
 import { add } from "@/services/"
