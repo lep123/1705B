@@ -16,6 +16,7 @@ const { Header, Sider, Content } = Layout;
 export default class extends React.Component {
 	state = {
 		collapsed: false,
+		dis: ['1']
 	};
 
 	toggle = () => {
@@ -25,13 +26,29 @@ export default class extends React.Component {
 	};
 
 	render() {
+		const a = this.props.location.pathname
+		let dis = ['1']
+		switch (a) {
+			case '/':
+				dis = ['1']
+				break;
+			case '/echats':
+				dis = ['2']
+				break;
+			case '/add':
+				dis = ['3']
+				break;
+			default:
+				dis = ['1']
+				break;
+		}
 		return (
 			<div id="box">
 				<Posi />
 				<Layout>
 					<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
 						<div className="logo" />
-						<Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+						<Menu theme="dark" mode="inline" defaultSelectedKeys={dis}>
 							<Menu.Item key="1">
 								<Link to="/">
 									<Icon type="user" />
