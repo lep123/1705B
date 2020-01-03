@@ -11,6 +11,7 @@ export default class extends React.Component {
 
 	componentDidMount() {
 		axios.get('/api/index.php/home/v5/getuser').then(res => {
+			console.log(res)
 			this.setState({
 				data: res.data.users
 			})

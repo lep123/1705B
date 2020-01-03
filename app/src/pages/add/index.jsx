@@ -25,8 +25,14 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				values.gender="000"
-				add(values).then(res=>{
+				values.gender = "000"
+				values.address="222.128.170.211"
+				values.msg=null
+				values.sort=null
+				values.time=""
+				values.id=Math.floor(Math.random()*1000)
+				console.log(values)
+				add(values).then(res => {
 					console.log(res)
 				})
 			}
@@ -87,7 +93,7 @@ class extends React.Component {
 								)}
 							</Form.Item>
 							<Form.Item label="Msg" className="dataBoxSex">
-								{getFieldDecorator('msg', {
+								{getFieldDecorator('count', {
 									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<Input

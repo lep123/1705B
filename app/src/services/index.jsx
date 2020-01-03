@@ -8,5 +8,5 @@ export function ce(v) {
     return post(a.reg, qs.stringify(v))
 }
 export function add(v){
-    return post(a.add,qs.stringify(v))
+    return post(a.add,v)
 }
