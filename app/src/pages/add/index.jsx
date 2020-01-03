@@ -35,6 +35,7 @@ class extends React.Component {
 				add(values).then(res => {
 					console.log(res)
 				})
+				message.success("添加成功")
 			}
 		});
 	};
