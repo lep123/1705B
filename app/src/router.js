@@ -7,6 +7,7 @@ import {store} from "./store"
 import loadable  from '@/utils/loader' 
 const Home = loadable(() => import('./pages/home'))
 const Login = loadable(() => import('./pages/login'))
+const Registered = loadable(() => import('./pages/registered'))
 export default function Router() {
 	return (
 		<Provider store={store}>
