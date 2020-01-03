@@ -1,6 +1,5 @@
 import a from "./api.js"
 import { post, get } from '@/utils/request'
-import qs from "qs"
 export function login(v) {
     return post(a.log,v)
 }
