@@ -25,6 +25,7 @@ class extends React.Component {
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values);
+
 			}
 		});
 	};
@@ -38,10 +39,17 @@ class extends React.Component {
 			message.error(`${info.file.name} file upload failed.`);
 		}
 	}
+	normFile = e => {
+		console.log('Upload event:', e);
+		if (Array.isArray(e)) {
+		  return e;
+		}
+		return e && e.fileList;
+	  };
 	render() {
 		const props = {
 			name: 'file',
-			action: 'http://49.235.147.95:3001/api/banner/update',
+			action: '',
 			headers: {
 				authorization: 'authorization-text',
 			}
@@ -55,47 +63,53 @@ class extends React.Component {
 				<div className="AddFlexBox">
 					<div className="addRowbox">
 						<Form onSubmit={this.handleSubmit} className="login-form">
-							<Form.Item label="NAME" className="insideForm">
+							<Form.Item label="Name" className="insideForm">
 								{getFieldDecorator('name', {
-									rules: [{ required: true, message: 'Please input your username!' }],
+									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<Input
 										prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-										placeholder="姓名"
+										placeholder="username"
 									/>,
 								)}
 							</Form.Item>
-							<Form.Item label="TITAGELE" className="insideForm">
+							<Form.Item label="Age" className="insideForm">
 								{getFieldDecorator('age', {
-									rules: [{ required: true, message: 'Please input your username!' }],
+									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<Input
-										prefix={<Icon type="pass" style={{ color: 'rgba(0,0,0,.25)' }} />}
-										placeholder="年龄"
+										prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+										placeholder="age"
 									/>,
 								)}
 							</Form.Item>
-							<Form.Item label="DATE" className="dataBoxSex">
-								{getFieldDecorator('username', {
-									rules: [{ required: true, message: 'Please input your username!' }],
+							<Form.Item label="Msg" className="dataBoxSex">
+								{getFieldDecorator('msg', {
+									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<Input
-										prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-										placeholder="Username"
+										prefix={<Icon type="like" style={{ color: 'rgba(0,0,0,.25)' }} />}
+										placeholder=""
 									/>,
 								)}
 							</Form.Item>
 							<div className="imgBox">
-								<p> <label style={{color:"red"}}>*</label> 上传</p>
-								<Upload {...props}>
-									<Button>
-										<Icon type="upload" /> Click to Upload
-    </Button>
-								</Upload>
+								<Form.Item label="Upload" extra="">
+									{getFieldDecorator('gender', {
+										valuePropName: 'fileList',
+										getValueFromEvent: this.normFile,
+									})(
+										<Upload name="logo" action="http://vueshop.glbuys.com/api/user/myinfo/formdatahead?token=1ec949a15fb709370f" listType="picture">
+											<Button>
+												<Icon type="upload" /> Click to upload
+              </Button>
+										</Upload>,
+									)}
+								</Form.Item>
 							</div>
-							<Form.Item label="留言板" className="liuyan">
-								{getFieldDecorator('gender', {
-									rules: [{ required: true, message: 'Please input your username!' }],
+							<Form.Item label="Description" className="liuyan">
+								{getFieldDecorator('hospital', {
+									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<TextArea rows={4} />,
 								)}

@@ -4,7 +4,7 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 export default @Form.create({ name: 'normal_login' })
 class extends React.Component {
-
+// dasasdsdasddd
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
