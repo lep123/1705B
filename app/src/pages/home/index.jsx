@@ -14,6 +14,13 @@ import Posi from '@/pages/position'
 const { Header, Sider, Content } = Layout;
 
 export default class extends React.Component {
+	constructor(props){
+		super(props)
+		if(!localStorage.getItem('id')){
+			this.props.history.push('/')
+		}
+	}
+
 	state = {
 		collapsed: false,
 		dis: ['1']

@@ -1,19 +1,42 @@
 import React from 'react';
 import './styles.less';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { post } from '@/utils/request'
-import { login } from '@/services/'
-export default
+import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
+import { login } from '@/services'
+import { connect } from 'react-redux';
+export default @connect(state => {
+	return {
+		name : state.user
+	}
+},{
+	get: option => {                                
+        return{      
+            type:"LOGIN",
+            payload:option
+        }
+    }
+})
 @Form.create({ name: 'normal_login' })
 class extends React.Component {
-// dasasdsdasddd
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				login(values).then(res => {
-					console.log(res)
+				const obj = {
+					username: values.username,
+					pwd: values.password
+				}
+				login(obj).then(res => {
+					if(res.data.status == 200){
+						console.log(res)
+						message.info('登录成功')
+						this.props.get(obj)
+						this.props.history.push('/home')
+						localStorage.setItem('id',res.data.data.user_id)
+					}else{
+						message.info('登录错误')
+					}
 				})
+				
 			}
 		});
 	};

@@ -1,11 +1,10 @@
 const Login= {
-    username:"",
-    password:""
+    name:""
 }
 export default function users(state = Login, action) {
     switch (action.type) {
-        case "USERS":
-            return { ...action.payload }
+        case "LOGIN":
+            return { ...state , ...{name:action.payload.username}}
         default:
             return { ...state }
     }
