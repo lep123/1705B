@@ -2,7 +2,7 @@ import React from 'react';
 import './index.less'
 import {
 	Form,
-	Icon, Input, Button, Checkbox,
+	Icon, Input, Button,
 	Upload, message
 } from 'antd';
 const { TextArea } = Input;
@@ -42,10 +42,10 @@ class extends React.Component {
 	normFile = e => {
 		console.log('Upload event:', e);
 		if (Array.isArray(e)) {
-		  return e;
+			return e;
 		}
 		return e && e.fileList;
-	  };
+	};
 	render() {
 		const props = {
 			name: 'file',
