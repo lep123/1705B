@@ -11,5 +11,8 @@ export function add(v) {
     return post(a.add, v)
 }
 export function addList() {
-    return post(a.addList)
+    return get(a.addList)
+}
+export function list(v) {
+    return get(a.list, v)
 }
