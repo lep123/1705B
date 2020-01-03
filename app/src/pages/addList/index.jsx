@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Cart from '@/pages/cart'
 import './index.less'
 
 
@@ -23,9 +24,7 @@ export default class extends React.Component {
 				{
 					data.map(v => {
 						return (
-							<div>
-								{v.name}
-							</div>
+							<Cart key={v.id} data={v} />
 						)
 					})
 				}
