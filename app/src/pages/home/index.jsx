@@ -9,6 +9,7 @@ import {
 import Echats from '@/pages/echats'
 import Add from '@/pages/add'
 import List from '@/pages/list'
+import Posi from '@/pages/position'
 
 const { Header, Sider, Content } = Layout;
 
@@ -43,6 +44,7 @@ export default class extends React.Component {
 		}
 		return (
 			<div id="box">
+				<Posi />
 				<Layout>
 					<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
 						<div className="logo" />

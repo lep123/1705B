@@ -9,14 +9,10 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				
 			}
 		});
 	};
-
-	registered(){
-		this.props.history.push('/registered')
-	}
 
 
 	render() {
@@ -47,15 +43,8 @@ class extends React.Component {
 							)}
 						</Form.Item>
 						<Form.Item>
-							{getFieldDecorator('remember', {
-								valuePropName: 'checked',
-								initialValue: true,
-							})(<Checkbox>记住密码</Checkbox>)}
 							<Button type="primary" htmlType="submit" className="login-form-button">
-								登录
-							</Button>
-							<Button onClick={this.registered} type="danger">
-								注册
+                                注册
 							</Button>
 						</Form.Item>
 					</Form>
