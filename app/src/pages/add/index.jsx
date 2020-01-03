@@ -5,6 +5,7 @@ import {
 	Icon, Input, Button, Checkbox,
 	Upload, message
 } from 'antd';
+import { add } from "@/services/"
 const { TextArea } = Input;
 export default
 @Form.create({
@@ -24,8 +25,10 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
-
+				values.gender="000"
+				add(values).then(res=>{
+					console.log(res)
+				})
 			}
 		});
 	};
@@ -42,14 +45,14 @@ class extends React.Component {
 	normFile = e => {
 		console.log('Upload event:', e);
 		if (Array.isArray(e)) {
-		  return e;
+			return e;
 		}
 		return e && e.fileList;
-	  };
+	};
 	render() {
 		const props = {
 			name: 'file',
-			action: '',
+			action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
 			headers: {
 				authorization: 'authorization-text',
 			}
@@ -99,7 +102,7 @@ class extends React.Component {
 										valuePropName: 'fileList',
 										getValueFromEvent: this.normFile,
 									})(
-										<Upload name="logo" action="http://vueshop.glbuys.com/api/user/myinfo/formdatahead?token=1ec949a15fb709370f" listType="picture">
+										<Upload {...props}>
 											<Button>
 												<Icon type="upload" /> Click to upload
               </Button>
