@@ -8,20 +8,13 @@ module.exports = function (app) {
             pathRewrite: {
                 '^/api': ''
             }
-        }
-        )
-    )
-}
-
-module.exports = function (app) {
-    app.use(
+        }),
         proxy('/xxx', {
             target: 'https://blogs.zdldove.top/',
             changeOrigin: true,
             pathRewrite: {
                 '^/xxx': ''
             }
-        }
-        )
+        })
     )
 }
