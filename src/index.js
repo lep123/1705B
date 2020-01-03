@@ -1,8 +1,5 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-<<<<<<< HEAD
-import Info from './pages/Info'
-import Fuzi from './pages/Fuzi'
 import './index.css'
 
 
@@ -171,11 +168,9 @@ export default class Inpues extends React.Component {
         </li>
         <button disabled={this.state.bool}>登陆</button>
       </div>
-=======
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import cs from 'classnames'
-import qs from 'qs'
-import './index.css'
+    )
+    }
+}
 
 /**
  * 1. 图片引入
@@ -279,21 +274,10 @@ class Router extends React.Component {
           <Route exact path="/" component={G1} />
         </Switch>
       </BrowserRouter>
->>>>>>> 8ae14f83e1729d01a8a47858b10fa91db5e48765
     )
   }
 }
 
-<<<<<<< HEAD
-
-ReactDOM.render(
-      <div>
-        <Info/>
-        <Fuzi/>
-        <Inpues/>
-      </div>
-      ,document.getElementById('root')
-)
 
 
 
@@ -477,7 +461,6 @@ ReactDOM.render(
 
 
 
-=======
 class G1 extends React.Component {
   render () {
     return <div>子组件333333333</div>
@@ -532,4 +515,3 @@ ReactDOM.render(
   <Fu />,
   document.getElementById('root')
 )
->>>>>>> 8ae14f83e1729d01a8a47858b10fa91db5e48765
