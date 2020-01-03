@@ -26,7 +26,7 @@ class extends React.Component {
 					pwd: values.password
 				}
 				login(obj).then(res => {
-					if(res.data.status === 200){
+					if(res.data.status === '200'){
 						message.info('登录成功')
 						this.props.get(obj)
 						this.props.history.push('/')
