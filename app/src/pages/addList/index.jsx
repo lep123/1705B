@@ -1,8 +1,7 @@
 import React from 'react'
-import axios from 'axios'
 import Cart from '@/pages/cart'
+import { addList } from '@/services'
 import './index.less'
-
 
 export default class extends React.Component {
 	state = {
@@ -10,7 +9,7 @@ export default class extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('/api/index.php/home/v5/getuser').then(res => {
+		addList().then(res => {
 			this.setState({
 				data: res.data.users
 			})

@@ -25,8 +25,8 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				values.gender="000"
-				add(values).then(res=>{
+				values.gender = "000"
+				add(values).then(res => {
 					console.log(res)
 				})
 			}
@@ -105,7 +105,7 @@ class extends React.Component {
 										<Upload {...props}>
 											<Button>
 												<Icon type="upload" /> Click to upload
-              </Button>
+           				    </Button>
 										</Upload>,
 									)}
 								</Form.Item>
@@ -119,7 +119,7 @@ class extends React.Component {
 							</Form.Item>
 							<Button type="primary" htmlType="submit" className="login-form-button">
 								添加
-          </Button>
+       		    </Button>
 						</Form>
 					</div>
 				</div>
