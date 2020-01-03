@@ -1,10 +1,8 @@
 import React from 'react';
 import './styles.less';
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
-import { post } from '@/utils/request'
-import qs from 'qs'
 import { connect } from 'react-redux'
-import services from '@/services/api'
+import { ce } from '@/services/'
 
 export default @connect(state => {
 
@@ -23,7 +21,7 @@ class extends React.Component {
 						username: values.username,
 						pwd: values.password
 					}
-					post(services.reg, obj).then(res => {
+					ce(obj).then(res => {
 						if (res.data.status == 200) {
 							message.info('注册成功')
 						} else {
