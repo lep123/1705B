@@ -3,6 +3,7 @@ import Left from './left'
 import Right from './right/index'
 import './style.less'
 /*得得得得得得得得得得*/
+//11111111
 export default class Home extends Component {
 
     constructor (props) {
