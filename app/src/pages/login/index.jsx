@@ -2,8 +2,7 @@ import React from 'react';
 import './styles.less';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { post } from '@/utils/request'
-import services from '@/services/api'
-
+import { login } from '@/services/'
 export default
 @Form.create({ name: 'normal_login' })
 class extends React.Component {
@@ -12,7 +11,7 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				post(services.log , values).then(res => {
+				login(values).then(res => {
 					console.log(res)
 				})
 			}
