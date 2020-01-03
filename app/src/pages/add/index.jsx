@@ -2,9 +2,10 @@ import React from 'react';
 import './index.less'
 import {
 	Form,
-	Icon, Input, Button, Checkbox,
+	Icon, Input, Button,
 	Upload, message
 } from 'antd';
+import { add } from "@/services/"
 const { TextArea } = Input;
 export default
 @Form.create({
@@ -24,8 +25,17 @@ class extends React.Component {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
-
+				values.gender = "000"
+				values.address = "222.128.170.211"
+				values.msg = null
+				values.sort = null
+				values.time = ""
+				values.id = Math.floor(Math.random() * 1000)
+				console.log(values)
+				add(values).then(res => {
+					console.log(res)
+				})
+				message.success("添加成功")
 			}
 		});
 	};
@@ -42,14 +52,14 @@ class extends React.Component {
 	normFile = e => {
 		console.log('Upload event:', e);
 		if (Array.isArray(e)) {
-		  return e;
+			return e;
 		}
 		return e && e.fileList;
-	  };
+	};
 	render() {
 		const props = {
 			name: 'file',
-			action: '',
+			action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
 			headers: {
 				authorization: 'authorization-text',
 			}
@@ -84,7 +94,7 @@ class extends React.Component {
 								)}
 							</Form.Item>
 							<Form.Item label="Msg" className="dataBoxSex">
-								{getFieldDecorator('msg', {
+								{getFieldDecorator('count', {
 									rules: [{ required: true, message: '不可为空！' }],
 								})(
 									<Input
@@ -99,10 +109,10 @@ class extends React.Component {
 										valuePropName: 'fileList',
 										getValueFromEvent: this.normFile,
 									})(
-										<Upload name="logo" action="http://vueshop.glbuys.com/api/user/myinfo/formdatahead?token=1ec949a15fb709370f" listType="picture">
+										<Upload {...props}>
 											<Button>
 												<Icon type="upload" /> Click to upload
-              </Button>
+           				    </Button>
 										</Upload>,
 									)}
 								</Form.Item>
@@ -116,7 +126,7 @@ class extends React.Component {
 							</Form.Item>
 							<Button type="primary" htmlType="submit" className="login-form-button">
 								添加
-          </Button>
+       		    </Button>
 						</Form>
 					</div>
 				</div>
