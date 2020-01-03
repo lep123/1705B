@@ -15,8 +15,8 @@ export default function Router() {
 				<BrowserRouter>
 					<Switch>
 						<Route path="/registered" component={Registered}/>
-						<Route path="/home" component={Home} />
-						<Route path="/" component={Login} />
+						<Route path="/login" component={Login} />
+						<Route path="/" component={Home} />
 					</Switch>
 				</BrowserRouter>
 			</PersistGate>
