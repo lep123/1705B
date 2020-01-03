@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.less';
-import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
+import { Form, Icon, Input, Button, message } from 'antd';
 import { connect } from 'react-redux'
 import { ce } from '@/services/'
 
@@ -22,7 +22,7 @@ class extends React.Component {
 						pwd: values.password
 					}
 					ce(obj).then(res => {
-						if (res.data.status == 200) {
+						if (res.data.status === 200) {
 							message.info('注册成功')
 						} else {
 							message.info('注册失败,用户名已存在')
